@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce | Contact Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main>div {
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        #main_heading_box {
+            width : 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 100%;
+        }
+
+        #main_heading_box h2 {
+            color: rgb(8, 129, 120);
+            font-size: 45px;
+        }
+
+        #main_heading_box p {
+            color: #696c6e;
+            font-size: 19px;
+        }
+
+        #contact_form {
+            width : 100%;
+            border-radius: 12px;
+            height: 360px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+            padding: 20px;
+        }
+
+        #contact_form label {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 15px;
+        }
+
+        #contact_form input {
+            border: 1px solid rgb(231, 231, 231);
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 10px;
+            font-size: 16px;
+            padding: 8px 12px;
+            /* border: 1px solid #bdb9b9; */
+            box-shadow : 0 1.5px 1.5px #bdb9b9;
+        }
+        
+        #contact_form input:focus {
+            outline: 1px solid #bdb9b9;
+        }
+        
+        #contact_form textarea {
+            box-shadow : 0 1.5px 1.5px #bdb9b9;
+            border: 1px solid rgb(231, 231, 231);
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 10px;
+            font-size: 16px;
+            padding: 8px 12px;
+            font-family: sans-serif;
+        }
+
+        #contact_form textarea:focus {
+            outline: 1px solid #bdb9b9;
+        }
+
+        #contact_form button {
+            width: 100%;
+            border: none;
+            background-color: rgb(8, 129, 120);
+            padding: 8px;
+            font-size: 17px;
+            cursor: pointer;
+            color: #e7e2e2;
+            border-radius: 8px;
+            transition: background-color 0.25s;
+        }
+
+        #contact_form button:hover {
+            background-color: rgb(9, 102, 96);
+        }
+
+        @media(max-width : 560px) {
+            main > div {
+                width : 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>
+            <div id="main_heading_box">
+                <h2>Contact Us</h2>
+                <p>Get in Touch with Us! We're here to assist you.</p>
+            </div>
+            <form id="contact_form" method="">
+                <label for="name">Your Name
+                    <input id="name" type="text" placeholder="Enter your Name" required>
+                </label>
+                <label for="email">Your Email
+                    <input id="email"type="email" placeholder="Enter your Email" required>
+                </label>
+                <label>Your Message
+                    <textarea rows=5 placeholder="Type your message here!" required></textarea>
+                </label>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </main>
+    
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce | Log In</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main > div {
+            padding-top: 30px;
+            width: 410px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        #main_heading_box {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 100%;
+        }
+
+        #main_heading_box h2 {
+            color: rgb(8, 129, 120);
+            font-size: 35px;
+        }
+
+        #main_heading_box p {
+            color: #696c6e;
+            font-size: 19px;
+        }
+
+        #contact_form {
+            width: 100%;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+            padding: 20px;
+        }
+
+        #contact_form_heading h4 {
+            width: 100%;
+            font-size: 20px;
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+
+        #contact_form_heading p {
+            font-size: 16px;
+            color: #696c6e;
+            margin-bottom: 12px;
+        }
+
+        #contact_form label {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 16px;
+        }
+
+        #contact_form input {
+            border: 1px solid rgb(231, 231, 231);
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 10px;
+            font-size: 16px;
+            padding: 8px 12px;
+            box-shadow : 0 1.5px 1.5px #bdb9b9;
+        }
+
+        #contact_form input:focus {
+            outline: 1px solid #bdb9b9;
+        }
+
+        #contact_form button {
+            width: 100%;
+            border: none;
+            background-color: rgb(8, 129, 120);
+            padding: 8px;
+            font-size: 17px;
+            cursor: pointer;
+            color: #e7e2e2;
+            border-radius: 8px;
+            transition: background-color 0.25s;
+        }
+
+        #contact_form button:hover {
+            background-color: rgb(9, 102, 96);
+        }
+
+        #form_bottom_box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap : 5px;
+        }
+
+        #form_bottom_line {
+            display: flex;
+            gap : 3px;
+        }
+
+        #form_bottom_line a {
+            text-decoration: none;
+            display: inline-block;
+            color: rgb(8, 129, 120);
+        }
+
+        #form_bottom_line p,
+        #forget_password_line {
+            border: none;
+            background-color: rgba(0, 0, 255, 0);
+            font-size: 17px;
+            cursor: pointer;
+            color: #696c6e;
+            border-radius: 8px;
+        }
+
+        @media(max-width : 560px) {
+            main>div {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>
+            <div id="main_heading_box">
+                <h2>Welcome Back</h2>
+                <p>Log In to your Account & Continue buying.</p>
+            </div>
+            <form id="contact_form" method="">
+                <div id='contact_form_heading'>
+                    <h4>Log In</h4>
+                    <p>Enter your Credentials to Login to your Account.</p>
+                </div>
+                <label for="email">Email Address
+                    <input id="email" type="email" placeholder="Enter your Email Address" required>
+                </label>
+                <label for="password">Password
+                    <input id="password" type="password" placeholder="Enter your Passowrd" required>
+                </label>
+                <button type="submit">Log In</button>
+                <div id="form_bottom_box">
+                    <a id="forget_password_line" href="./forget-password.html">Forget Password?</a>
+                    <div id="form_bottom_line">
+                        <p>Don't have an Account? </p>
+                        <a id='signup' href="./signup.html">SignUp</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>

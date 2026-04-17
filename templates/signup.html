@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce | Sign Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main > div {
+            padding-top : 30px;
+            width: 410px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        #main_heading_box {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 100%;
+        }
+
+        #main_heading_box h2 {
+            color: rgb(8, 129, 120);
+            font-size: 37px;
+        }
+
+        #main_heading_box p {
+            color: #696c6e;
+            font-size: 19px;
+        }
+
+        #contact_form {
+            width: 100%;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+            padding: 20px;
+        }
+
+        #contact_form_heading h4 {
+            width: 100%;
+            font-size: 20px;
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+
+        #contact_form_heading p {
+            font-size: 16px;
+            color: #696c6e;
+            margin-bottom: 12px;
+        }
+
+        #contact_form label {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 16px;
+        }
+
+        #contact_form input {
+            border: 1px solid rgb(231, 231, 231);
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 10px;
+            font-size: 16px;
+            padding: 8px 12px;
+            box-shadow : 0 1.5px 1.5px #bdb9b9;
+        }
+
+        #contact_form input:focus {
+            outline: 1px solid #bdb9b9;
+        }
+
+        #contact_form button {
+            width: 100%;
+            border: none;
+            background-color: rgb(8, 129, 120);
+            padding: 8px;
+            font-size: 17px;
+            cursor: pointer;
+            color: #e7e2e2;
+            border-radius: 8px;
+            transition: background-color 0.25s;
+        }
+
+        #contact_form button:hover {
+            background-color: rgb(9, 102, 96);
+        }
+
+        #form_bottom_line {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            border: none;
+            background-color: rgba(0, 0, 255, 0);
+            font-size: 17px;
+            cursor: pointer;
+            color:#696c6e;
+            border-radius: 8px;
+        }
+
+        #form_bottom_line a {
+            text-decoration: none;
+            display: inline-block;
+            color : rgb(9, 102, 96);
+        }
+
+        @media(max-width : 560px) {
+            main>div {
+                width: 90%;
+            }
+        }
+
+        @media(max-width : 325px){
+            #form_bottom_line {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>
+            <div id="main_heading_box">
+                <h2>Join Ecommerce</h2>
+                <p>Create Account to start getting Recomendations.</p>
+            </div>
+            <form id="contact_form" method="">
+                <div id='contact_form_heading'>
+                    <h4>Create Account</h4>
+                    <p>Create Account and start buying products.</p>
+                </div>
+                <label for="full_name">Full Name
+                    <input id="full_name" type="text" placeholder="Enter your Full Name" required>
+                </label>
+                <label for="email">Email Address
+                    <input id="email" type="email" placeholder="Enter your Email Address" required>
+                </label>
+                <label for="password">Password
+                    <input id="password" type="password" placeholder="Create a Passowrd" required>
+                </label>
+                <button type="submit">Create Account</button>
+                <div id="form_bottom_line">
+                    <p>Already have an Account? </p>
+                    <a href="./login.html">LogIn</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>
