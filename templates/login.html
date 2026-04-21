@@ -49,62 +49,80 @@
 
         #contact_form {
             width: 100%;
-            border-radius: 12px;
+            border-radius: 15px;
             display: flex;
             flex-direction: column;
             gap: 18px;
             box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
-            padding: 20px;
+            padding: 25px;
         }
-
+        
         #contact_form_heading h4 {
             width: 100%;
-            font-size: 20px;
+            font-size: 22px;
             margin-bottom: 5px;
             font-weight: normal;
         }
 
         #contact_form_heading p {
-            font-size: 16px;
+            font-size: 17px;
             color: #696c6e;
-            margin-bottom: 12px;
-        }
-
-        #contact_form label {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            font-size: 16px;
-        }
-
-        #contact_form input {
-            border: 1px solid rgb(231, 231, 231);
-            background-color: rgba(255, 255, 255, 0);
-            border-radius: 10px;
-            font-size: 16px;
-            padding: 8px 12px;
-            box-shadow : 0 1.5px 1.5px #bdb9b9;
-        }
-
-        #contact_form input:focus {
-            outline: 1px solid #bdb9b9;
+            margin-bottom: 5px;
         }
 
         #contact_form button {
             width: 100%;
             border: none;
             background-color: rgb(8, 129, 120);
-            padding: 8px;
+            padding: 11px;
             font-size: 17px;
             cursor: pointer;
             color: #e7e2e2;
-            border-radius: 8px;
+            border-radius: 25px;
             transition: background-color 0.25s;
         }
 
         #contact_form button:hover {
             background-color: rgb(9, 102, 96);
+        }
+
+        .input-container {
+            position: relative;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ced4da;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            background: transparent;
+            transition: border-color 0.2s;
+        }
+
+        .input-container label {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            padding: 0 5px;
+            color: #8a8a8a;
+            pointer-events: none;
+            transition: 0.2s ease-all;
+            font-size : 18px;
+        }
+
+        .input-container input:focus+label,
+        .input-container input:not(:placeholder-shown)+label {
+            top: 0;
+            font-size: 17px;
+            color: #088178;
+        }
+
+        .input-container input:focus {
+            border: 1px solid #088178;
         }
 
         #form_bottom_box{
@@ -156,12 +174,14 @@
                     <h4>Log In</h4>
                     <p>Enter your Credentials to Login to your Account.</p>
                 </div>
-                <label for="email">Email Address
-                    <input id="email" type="email" placeholder="Enter your Email Address" required>
-                </label>
-                <label for="password">Password
-                    <input id="password" type="password" placeholder="Enter your Passowrd" required>
-                </label>
+                <div class="input-container">
+                    <input id="email" type="email" placeholder=" " required>
+                    <label for="email">Email Address</label>
+                </div>
+                <div class="input-container">
+                    <input id="password" type="password" placeholder=" " required>
+                    <label for="password">Enter Your Password</label>
+                </div>
                 <button type="submit">Log In</button>
                 <div id="form_bottom_box">
                     <a id="forget_password_line" href="./forget-password.html">Forget Password?</a>

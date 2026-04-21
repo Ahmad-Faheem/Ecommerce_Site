@@ -19,7 +19,7 @@
             align-items: center;
         }
 
-        main>div {
+        main > div {
             width: 500px;
             display: flex;
             flex-direction: column;
@@ -28,7 +28,7 @@
         }
 
         #main_heading_box {
-            width : 100%;
+            width: 100%;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -38,7 +38,7 @@
 
         #main_heading_box h2 {
             color: rgb(8, 129, 120);
-            font-size: 45px;
+            font-size: 35px;
         }
 
         #main_heading_box p {
@@ -47,66 +47,75 @@
         }
 
         #contact_form {
-            width : 100%;
-            border-radius: 12px;
-            height: 360px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
-            padding: 20px;
-        }
-
-        #contact_form label {
             width: 100%;
+            border-radius: 15px;
             display: flex;
             flex-direction: column;
-            gap: 5px;
-            font-size: 15px;
-        }
-
-        #contact_form input {
-            border: 1px solid rgb(231, 231, 231);
-            background-color: rgba(255, 255, 255, 0);
-            border-radius: 10px;
-            font-size: 16px;
-            padding: 8px 12px;
-            /* border: 1px solid #bdb9b9; */
-            box-shadow : 0 1.5px 1.5px #bdb9b9;
-        }
-        
-        #contact_form input:focus {
-            outline: 1px solid #bdb9b9;
-        }
-        
-        #contact_form textarea {
-            box-shadow : 0 1.5px 1.5px #bdb9b9;
-            border: 1px solid rgb(231, 231, 231);
-            background-color: rgba(255, 255, 255, 0);
-            border-radius: 10px;
-            font-size: 16px;
-            padding: 8px 12px;
-            font-family: sans-serif;
-        }
-
-        #contact_form textarea:focus {
-            outline: 1px solid #bdb9b9;
+            gap: 18px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+            padding: 25px;
         }
 
         #contact_form button {
             width: 100%;
             border: none;
             background-color: rgb(8, 129, 120);
-            padding: 8px;
+            padding: 11px;
             font-size: 17px;
             cursor: pointer;
             color: #e7e2e2;
-            border-radius: 8px;
+            border-radius: 25px;
             transition: background-color 0.25s;
         }
 
         #contact_form button:hover {
             background-color: rgb(9, 102, 96);
+        }
+
+        .input-container {
+            position: relative;
+        }
+
+        .input-container textarea,
+        .input-container input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ced4da;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            background: transparent;
+            transition: border-color 0.2s;
+        }
+
+        .input-container label {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            padding: 0 5px;
+            color: #8a8a8a;
+            pointer-events: none;
+            transition: 0.2s ease-all;
+            font-size : 18px;
+        }
+
+        .textarea label {
+            top: 20%;
+        }
+
+        .input-container textarea:focus+label,
+        .input-container input:focus+label,
+        .input-container input:not(:placeholder-shown)+label {
+            top: 0;
+            font-size: 17px;
+            color: #088178;
+        }
+
+        .input-container textarea:focus,
+        .input-container input:focus {
+            border: 1px solid #088178;
         }
 
         @media(max-width : 560px) {
@@ -125,15 +134,18 @@
                 <p>Get in Touch with Us! We're here to assist you.</p>
             </div>
             <form id="contact_form" method="">
-                <label for="name">Your Name
-                    <input id="name" type="text" placeholder="Enter your Name" required>
-                </label>
-                <label for="email">Your Email
-                    <input id="email"type="email" placeholder="Enter your Email" required>
-                </label>
-                <label>Your Message
-                    <textarea rows=5 placeholder="Type your message here!" required></textarea>
-                </label>
+                <div class="input-container">
+                    <input id="name" type="text" placeholder=" " required>
+                    <label for="name">Your Name</label>
+                </div>
+                <div class="input-container">
+                    <input id="email"type="email" placeholder=" " required>
+                    <label for="email">Your Email</label>
+                </div>
+                <div class="input-container textarea">
+                    <textarea id="message" rows=5 placeholder="" required></textarea>
+                    <label for="message">Type Your Message</label>
+                </div>
                 <button type="submit">Send Message</button>
             </form>
         </div>
