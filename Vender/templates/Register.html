@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sellzy | Vendor Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 10px;
+        }
+
+        main > div {
+            width: 650px; /* Wider to accommodate two columns */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        #main_heading_box {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        #main_heading_box h2 {
+            color: rgb(8, 129, 120);
+            font-size: 35px;
+        }
+
+        #main_heading_box p {
+            color: #696c6e;
+            font-size: 19px;
+        }
+
+        #vendor_form {
+            width: 100%;
+            background-color: white;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+            padding: 35px;
+        }
+
+        #form_heading h4 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        #form_heading p {
+            font-size: 16px;
+            color: #696c6e;
+            margin-bottom: 10px;
+        }
+
+        /* Grid layout for fields */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .input-container {
+            position: relative;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 12px 18px;
+            border: 1px solid #ced4da;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            background: transparent;
+            transition: border-color 0.2s;
+        }
+
+        .input-container label {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            padding: 0 5px;
+            color: #8a8a8a;
+            pointer-events: none;
+            transition: 0.2s ease-all;
+            font-size: 16px;
+        }
+
+        .input-container input:focus + label,
+        .input-container input:not(:placeholder-shown) + label {
+            top: 0;
+            font-size: 14px;
+            color: #088178;
+        }
+
+        .input-container input:focus {
+            border: 1px solid #088178;
+        }
+
+        #vendor_form button {
+            width: 100%;
+            border: none;
+            background-color: rgb(8, 129, 120);
+            padding: 14px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            color: #ffffff;
+            border-radius: 30px;
+            transition: background-color 0.25s;
+            margin-top: 10px;
+        }
+
+        #vendor_form button:hover {
+            background-color: rgb(9, 102, 96);
+        }
+
+        #form_bottom_line {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            width: 100%;
+            font-size: 16px;
+            color: #696c6e;
+        }
+
+        #form_bottom_line a {
+            text-decoration: none;
+            color: rgb(9, 102, 96);
+            font-weight: 600;
+        }
+
+        /* Mobile Adjustments */
+        @media(max-width: 680px) {
+            main > div {
+                width: 95%;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>
+            <div id="main_heading_box">
+                <h2>Partner with Sellzy</h2>
+                <p>Register as a vendor and expand your business.</p>
+            </div>
+
+            <form id="vendor_form" action="#" method="POST">
+                <div id='form_heading'>
+                    <h4>Vendor Registration</h4>
+                    <p>Enter your business details to get started.</p>
+                </div>
+
+                <div class="form-grid">
+                    <div class="input-container">
+                        <input id="v_name" name="name" type="text" placeholder=" " required>
+                        <label for="v_name">Full Name</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="v_email" name="email" type="email" placeholder=" " required>
+                        <label for="v_email">Email Address</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="v_phone" name="phone" type="tel" placeholder=" " required>
+                        <label for="v_phone">Phone Number</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="v_cnic" name="cnic" type="text" placeholder=" " required>
+                        <label for="v_cnic">CNIC Number</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="b_name" name="business_name" type="text" placeholder=" ">
+                        <label for="b_name">Business Name (Optional)</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="b_address" name="business_address" type="text" placeholder=" ">
+                        <label for="b_address">Business Address (Optional)</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="v_pass" name="password" type="password" placeholder=" " required>
+                        <label for="v_pass">Password</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="v_confirm_pass" name="confirm_password" type="password" placeholder=" " required>
+                        <label for="v_confirm_pass">Confirm Password</label>
+                    </div>
+                </div>
+
+                <button type="submit">Register as a Vendor</button>
+
+                <div id="form_bottom_line">
+                    <p>Already a partner? </p>
+                    <a href="./vendor-login.html">Log In</a>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

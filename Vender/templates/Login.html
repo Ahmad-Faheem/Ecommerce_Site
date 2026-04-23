@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sellzy | Vendor Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        main > div {
+            width: 410px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        #main_heading_box {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        #main_heading_box h2 {
+            color: rgb(8, 129, 120);
+            font-size: 35px;
+        }
+
+        #main_heading_box p {
+            color: #696c6e;
+            font-size: 19px;
+        }
+
+        #login_form {
+            width: 100%;
+            background-color: white;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        #form_heading h4 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        #form_heading p {
+            font-size: 16px;
+            color: #696c6e;
+            margin-bottom: 10px;
+        }
+
+        .input-container {
+            position: relative;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 12px 18px;
+            border: 1px solid #ced4da;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            background: transparent;
+            transition: border-color 0.2s;
+        }
+
+        .input-container label {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            padding: 0 5px;
+            color: #8a8a8a;
+            pointer-events: none;
+            transition: 0.2s ease-all;
+            font-size: 16px;
+        }
+
+        .input-container input:focus + label,
+        .input-container input:not(:placeholder-shown) + label {
+            top: 0;
+            font-size: 14px;
+            color: #088178;
+        }
+
+        .input-container input:focus {
+            border: 1px solid #088178;
+        }
+
+        .forgot-pass {
+            text-align: right;
+            width: 100%;
+            margin-top: -10px;
+        }
+
+        .forgot-pass a {
+            font-size: 14px;
+            color: #696c6e;
+            text-decoration: none;
+        }
+
+        .forgot-pass a:hover {
+            color: #088178;
+        }
+
+        #login_form button {
+            width: 100%;
+            border: none;
+            background-color: rgb(8, 129, 120);
+            padding: 13px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            color: #ffffff;
+            border-radius: 30px;
+            transition: background-color 0.25s;
+        }
+
+        #login_form button:hover {
+            background-color: rgb(9, 102, 96);
+        }
+
+        #form_bottom_line {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            width: 100%;
+            font-size: 16px;
+            color: #696c6e;
+        }
+
+        #form_bottom_line a {
+            text-decoration: none;
+            color: rgb(9, 102, 96);
+            font-weight: 600;
+        }
+
+        @media(max-width: 450px) {
+            main > div {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>
+            <div id="main_heading_box">
+                <h2>Welcome Back</h2>
+                <p>Manage your shop and track your sales.</p>
+            </div>
+
+            <form id="login_form" action="#" method="POST">
+                <div id='form_heading'>
+                    <h4>Vendor Login</h4>
+                    <p>Enter your credentials to access your dashboard.</p>
+                </div>
+
+                <div class="input-container">
+                    <input id="v_email" name="email" type="email" placeholder=" " required>
+                    <label for="v_email">Email Address</label>
+                </div>
+
+                <div class="input-container">
+                    <input id="v_pass" name="password" type="password" placeholder=" " required>
+                    <label for="v_pass">Password</label>
+                </div>
+
+                <div class="forgot-pass">
+                    <a href="./forgot-password.html">Forgot Password?</a>
+                </div>
+
+                <button type="submit">Log In to Dashboard</button>
+
+                <div id="form_bottom_line">
+                    <p>New to Sellzy? </p>
+                    <a href="./vendor-signup.html">Register Now</a>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
