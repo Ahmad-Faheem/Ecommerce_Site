@@ -13,9 +13,9 @@ urlpatterns = [
     path('not-found/', views.not_found, name='not_found'),
     path('coming-soon/', views.coming_soon, name='coming_soon'),
     
-    path('Admin/',include('Admin.urls')),
-    path('User/',include('User.urls')),
-    path('Vender/',include('Vender.urls')),
+    path('',include('Admin.urls')),
+    path('',include('User.urls')),
+    path('',include('Vender.urls')),
 ]
 
 if settings.DEBUG:

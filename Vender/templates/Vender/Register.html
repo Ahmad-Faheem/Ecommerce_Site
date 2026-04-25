@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sellzy | Vendor Login</title>
+    <title>Sellzy | Vendor Registration</title>
     <style>
         * {
             margin: 0;
@@ -21,12 +21,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            padding: 40px 10px;
         }
 
         main > div {
-            width: 410px;
+            width: 650px; /* Wider to accommodate two columns */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -51,19 +50,19 @@
             font-size: 19px;
         }
 
-        #login_form {
+        #vendor_form {
             width: 100%;
             background-color: white;
             border-radius: 15px;
             display: flex;
             flex-direction: column;
             gap: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+            padding: 35px;
         }
 
         #form_heading h4 {
-            font-size: 22px;
+            font-size: 24px;
             color: #333;
             margin-bottom: 5px;
             font-weight: 600;
@@ -73,6 +72,17 @@
             font-size: 16px;
             color: #696c6e;
             margin-bottom: 10px;
+        }
+
+        /* Grid layout for fields */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .full-width {
+            grid-column: span 2;
         }
 
         .input-container {
@@ -114,36 +124,21 @@
             border: 1px solid #088178;
         }
 
-        .forgot-pass {
-            text-align: right;
-            width: 100%;
-            margin-top: -10px;
-        }
-
-        .forgot-pass a {
-            font-size: 14px;
-            color: #696c6e;
-            text-decoration: none;
-        }
-
-        .forgot-pass a:hover {
-            color: #088178;
-        }
-
-        #login_form button {
+        #vendor_form button {
             width: 100%;
             border: none;
             background-color: rgb(8, 129, 120);
-            padding: 13px;
-            font-size: 17px;
+            padding: 14px;
+            font-size: 18px;
             font-weight: 600;
             cursor: pointer;
             color: #ffffff;
             border-radius: 30px;
             transition: background-color 0.25s;
+            margin-top: 10px;
         }
 
-        #login_form button:hover {
+        #vendor_form button:hover {
             background-color: rgb(9, 102, 96);
         }
 
@@ -162,9 +157,16 @@
             font-weight: 600;
         }
 
-        @media(max-width: 450px) {
+        /* Mobile Adjustments */
+        @media(max-width: 680px) {
             main > div {
                 width: 95%;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .full-width {
+                grid-column: span 1;
             }
         }
     </style>
@@ -174,35 +176,63 @@
     <main>
         <div>
             <div id="main_heading_box">
-                <h2>Welcome Back</h2>
-                <p>Manage your shop and track your sales.</p>
+                <h2>Partner with Sellzy</h2>
+                <p>Register as a vendor and expand your business.</p>
             </div>
 
-            <form id="login_form" action="#" method="POST">
+            <form id="vendor_form" action="#" method="POST">
                 <div id='form_heading'>
-                    <h4>Vendor Login</h4>
-                    <p>Enter your credentials to access your dashboard.</p>
+                    <h4>Vendor Registration</h4>
+                    <p>Enter your business details to get started.</p>
                 </div>
 
-                <div class="input-container">
-                    <input id="v_email" name="email" type="email" placeholder=" " required>
-                    <label for="v_email">Email Address</label>
+                <div class="form-grid">
+                    <div class="input-container">
+                        <input id="v_name" name="name" type="text" placeholder=" " required>
+                        <label for="v_name">Full Name</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="v_email" name="email" type="email" placeholder=" " required>
+                        <label for="v_email">Email Address</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="v_phone" name="phone" type="tel" placeholder=" " required>
+                        <label for="v_phone">Phone Number</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="v_cnic" name="cnic" type="text" placeholder=" " required>
+                        <label for="v_cnic">CNIC Number</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="b_name" name="business_name" type="text" placeholder=" ">
+                        <label for="b_name">Business Name (Optional)</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="b_address" name="business_address" type="text" placeholder=" ">
+                        <label for="b_address">Business Address (Optional)</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="v_pass" name="password" type="password" placeholder=" " required>
+                        <label for="v_pass">Password</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="v_confirm_pass" name="confirm_password" type="password" placeholder=" " required>
+                        <label for="v_confirm_pass">Confirm Password</label>
+                    </div>
                 </div>
 
-                <div class="input-container">
-                    <input id="v_pass" name="password" type="password" placeholder=" " required>
-                    <label for="v_pass">Password</label>
-                </div>
-
-                <div class="forgot-pass">
-                    <a href="./forgot-password.html">Forgot Password?</a>
-                </div>
-
-                <button type="submit">Log In to Dashboard</button>
+                <button type="submit">Register as a Vendor</button>
 
                 <div id="form_bottom_line">
-                    <p>New to Sellzy? </p>
-                    <a href="./vendor-signup.html">Register Now</a>
+                    <p>Already a partner? </p>
+                    <a href="{% url 'Vender:Login' %}">Log In</a>
                 </div>
             </form>
         </div>

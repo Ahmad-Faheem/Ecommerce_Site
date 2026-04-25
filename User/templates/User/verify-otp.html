@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User | Verfiy OTP</title>
+    <link rel="stylesheet" href="{% static 'User/auth.css' %}">
+</head>
+
+<body>
+    <main>
+        <div>
+            <div id="main_heading_box">
+                <h2>OTP Confirmation</h2>
+                <p>Enter OTP that you received via Email.</p>
+            </div>
+            <form id="form" method="">
+                <div class="input-container">
+                    <input id="otp" type="text" placeholder="" required>
+                    <label for="otp">Enter your OTP</label>
+                </div>
+                <button type="submit">Confirm</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>

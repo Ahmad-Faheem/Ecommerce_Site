@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce | Sign Up</title>
+    <link rel="stylesheet" href="{% static 'User/auth.css' %}">
+</head>
+
+<body>
+    <main>
+        <div>
+            <div id="main_heading_box">
+                <h2>Join Ecommerce</h2>
+                <p>Create Account to start getting Recomendations.</p>
+            </div>
+            <form id="form" method="">
+                <div id='form_heading'>
+                    <h4>Create Account</h4>
+                    <p>Create Account and start buying products.</p>
+                </div>
+                <div class="input-container">
+                    <input id="full_name" type="text" placeholder=" " required>
+                    <label for="full_name">Full Name</label>
+                </div>
+                <div class="input-container">
+                    <input id="email" type="email" placeholder=" " required>
+                    <label for="email">Email Address</label>
+                </div>
+                <div class="input-container">
+                    <input id="password" type="password" placeholder=" " required>
+                    <label for="password">Password</label>
+                </div>
+                <button type="submit">Create Account</button>
+                <div id="form_bottom_line">
+                    <p>Already have an Account? </p>
+                    <a href="{% url 'User:login' %}">LogIn</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>

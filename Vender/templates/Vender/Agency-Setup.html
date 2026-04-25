@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vender | Agency Setup</title>
+    <link rel="stylesheet" href="{% static 'Vender/agency-setup.css' %}">
+</head>
+<body>
+
+<div class="wizard-container">
+    <h2>Agency Setup</h2>
+    <p class="subtitle">Complete these 3 steps to launch your store.</p>
+
+    <div class="stepper">
+        <div class="step-circle active" id="step-1-circle">1</div>
+        <div class="step-circle" id="step-2-circle">2</div>
+        <div class="step-circle" id="step-3-circle">3</div>
+    </div>
+
+    <form id="agency-wizard">
+        <div class="form-step active" id="step-1">
+            <div class="form-grid">
+                <div class="input-container full-width">
+                    <input id="store_name" type="text" placeholder=" " required>
+                    <label>Store Name <span class="required-star">*</span></label>
+                    <span class="error-text">Store name is required</span>
+                </div>
+                <div class="file-input-group">
+                    <label>Store Logo <span class="required-star">*</span></label>
+                    <div class="input-container">
+                        <input id="store_logo" type="file" accept="image/*" required>
+                    </div>
+                </div>
+                <div class="file-input-group">
+                    <label>Agency Banner (Optional)</label>
+                    <div class="input-container">
+                        <input id="store_banner" type="file" accept="image/*">
+                    </div>
+                </div>
+                <div class="input-container full-width">
+                    <textarea id="store_about" placeholder=" " required></textarea>
+                    <label>About / Description <span class="required-star">*</span></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-step" id="step-2">
+            <div class="form-grid">
+                <div class="input-container">
+                    <input id="city" type="text" placeholder=" " required>
+                    <label>City of Operations <span class="required-star">*</span></label>
+                </div>
+                <div class="input-container">
+                    <input id="b_phone" type="tel" placeholder=" " required>
+                    <label>Business Phone <span class="required-star">*</span></label>
+                </div>
+                <div class="input-container full-width">
+                    <input id="b_address" type="text" placeholder=" " required>
+                    <label>Business Address <span class="required-star">*</span></label>
+                </div>
+                <div class="input-container full-width">
+                    <input id="warehouse" type="text" placeholder=" " required>
+                    <label>Pickup / Warehouse Address <span class="required-star">*</span></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-step" id="step-3">
+            <div class="form-grid">
+                <div class="input-container">
+                    <input id="proc_time" type="text" placeholder=" " required>
+                    <label>Processing Time (e.g. 2 days) <span class="required-star">*</span></label>
+                </div>
+                <div class="input-container">
+                    <select id="return_limit" required>
+                        <option value="" disabled selected></option>
+                        <option value="0">No Returns</option>
+                        <option value="7">7 Days</option>
+                        <option value="15">15 Days</option>
+                        <option value="30">30 Days</option>
+                    </select>
+                    <label>Return Policy (Days) <span class="required-star">*</span></label>
+                </div>
+                <div class="input-container full-width">
+                    <input id="return_address" type="text" placeholder=" " required>
+                    <label>Return Address <span class="required-star">*</span></label>
+                </div>
+                <div class="radio-group full-width">
+                    <p style="font-size: 14px; color: var(--gray-text);">Shipping Method <span class="required-star">*</span></p>
+                    <div class="radio-options">
+                        <label class="radio-item">
+                            <input type="radio" name="ship_method" value="self" checked> Self Shipping
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="ship_method" value="platform"> Platform Services
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <button type="button" id="backBtn" class="btn-back hidden">Back</button>
+            <button type="button" id="nextBtn" class="btn-next" style="margin-left: auto;">Next</button>
+        </div>
+    </form>
+</div>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
